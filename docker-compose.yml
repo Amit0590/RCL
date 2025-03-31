@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+      - FACEBOOK_CLIENT_ID=your_facebook_client_id
+      - FACEBOOK_CLIENT_SECRET=your_facebook_client_secret
+      - GOOGLE_CLIENT_ID=your_google_client_id
+      - GOOGLE_CLIENT_SECRET=your_google_client_secret
+      - FACEBOOK_CALLBACK_URL=http://localhost:8080/auth/facebook/callback
+      - GOOGLE_CALLBACK_URL=http://localhost:8080/auth/google/callback
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+    volumes:
+      - ./:/app
+    restart: unless-stopped
+
+volumes:
+  dynamodb_data:

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Roshan Content Lab</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .profile-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-header h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .profile-picture {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+
+        .profile-picture .upload-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .profile-picture .upload-btn:hover {
+            background-color: #3a5bef;
+            transform: scale(1.1);
+        }
+
+        .profile-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(74, 107, 255, 0.2);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-col {
+            flex: 1;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .save-btn:hover {
+            background-color: #3a5bef;
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .profile-nav {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .profile-nav a {
+            display: block;
+            padding: 15px 0;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .profile-nav a.active {
+            color: var(--primary-color);
+        }
+
+        .profile-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><a href="index.html">Roshan Content Lab</a></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="request.html">New Request</a></li>
+                <li><a href="profile.html" class="active profile-link">Profile</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline login-btn">Login</a>
+                <a href="signup.html" class="btn btn-primary signup-btn">Sign Up</a>
+                <a href="#" class="btn btn-outline logout-btn" style="display: none;">Logout</a>
+                <span class="user-name" style="display: none;"></span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-picture">
+                    <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profileImage">
+                    <label for="profilePicture" class="upload-btn">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="profilePicture" accept="image/*" style="display: none;">
+                </div>
+                <h2>Profile Settings</h2>
+            </div>
+
+            <div class="profile-nav">
+                <ul>
+                    <li><a href="#" class="active">Personal Information</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Preferences</a></li>
+                </ul>
+            </div>
+
+            <form id="profileForm" class="profile-form">
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company/Organization</label>
+                    <input type="text" id="company" name="company">
+                </div>
+
+                <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+    // Inline profile script to ensure it works
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if user is logged in first
+        if(!checkAuth()) {
+            window.location.href = 'login.html';
+            return;
+        }
+        
+        // Load user profile data
+        loadUserProfile();
+        
+        // Setup event listeners for form submission and file upload
+        setupEventListeners();
+    });
+
+    // Authentication check function - reused from main.js for consistency
+    function checkAuth() {
+        const user = JSON.parse(localStorage.getItem('user'));
+        const token = localStorage.getItem('token');
+        if (!user || !token) {
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
+            return false;
+        }
+        return true;
+    }
+
+    // Load user profile data from server
+    function loadUserProfile() {
+        const token = localStorage.getItem('token');
+        
+        if (!token) {
+            console.error('No token found');
+            window.location.href = 'login.html';
+            return;
+        }
+        
+        fetch('/api/profile', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch profile data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                console.log('Profile data loaded successfully:', data);
+                
+                // Populate form fields
+                document.getElementById('firstName').value = data.firstName || '';
+                document.getElementById('lastName').value = data.lastName || '';
+                document.getElementById('email').value = data.email || '';
+                document.getElementById('company').value = data.company || '';
+                
+                // Update profile picture if available
+                if (data.profilePicture) {
+                    document.getElementById('profileImage').src = data.profilePicture;
+                }
+                
+                // Also update the username in the navigation
+                updateUserName(data.firstName, data.lastName);
+            } else {
+                console.error('Error in profile data:', data);
+                alert('Could not load profile data: ' + (data.message || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Error loading profile:', error);
+            alert('Failed to load profile data. Please try again.');
+        });
+    }
+
+    // Update username in the navigation
+    function updateUserName(firstName, lastName) {
+        const userNameElement = document.querySelector('.user-name');
+        if (userNameElement) {
+            userNameElement.textContent = `${firstName} ${lastName}`;
+            userNameElement.style.display = 'inline-block';
+        }
+    }
+
+    // Setup event listeners for form submission and file upload
+    function setupEventListeners() {
+        // Profile form submission
+        const profileForm = document.getElementById('profileForm');
+        if (profileForm) {
+            profileForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                updateProfile();
+            });
+        }
+        
+        // Profile picture upload
+        const profilePicInput = document.getElementById('profilePicture');
+        if (profilePicInput) {
+            profilePicInput.addEventListener('change', handleProfilePicUpload);
+        }
+    }
+
+    // Update profile information
+    function updateProfile() {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('Authentication required. Please login again.');
+            window.location.href = 'login.html';
+            return;
+        }
+        
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            company: document.getElementById('company').value
+        };
+
+        fetch('/api/profile', {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to update profile');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                alert('Profile updated successfully!');
+                // Update stored user data
+                const user = JSON.parse(localStorage.getItem('user'));
+                user.firstName = formData.firstName;
+                user.lastName = formData.lastName;
+                user.email = formData.email;
+                localStorage.setItem('user', JSON.stringify(user));
+                
+                // Update UI with new user name
+                updateUserName(formData.firstName, formData.lastName);
+            } else {
+                throw new Error(data.message || 'Failed to update profile');
+            }
+        })
+        .catch(error => {
+            console.error('Error updating profile:', error);
+            alert('Failed to update profile. Please try again.');
+        });
+    }
+
+    // Handle profile picture upload
+    function handleProfilePicUpload(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        if (!file.type.startsWith('image/')) {
+            alert('Please upload an image file');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const profileImage = document.getElementById('profileImage');
+            profileImage.src = e.target.result;
+
+            // Update profile with new image
+            updateProfilePicture(e.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+
+    // Update profile picture
+    function updateProfilePicture(imageData) {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('Authentication required. Please login again.');
+            window.location.href = 'login.html';
+            return;
+        }
+
+        fetch('/api/profile', {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                profilePicture: imageData
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to update profile picture');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (!data.success) {
+                throw new Error(data.message || 'Failed to update profile picture');
+            }
+        })
+        .catch(error => {
+            console.error('Error updating profile picture:', error);
+            alert('Failed to update profile picture. Please try again.');
+        });
+    }
+    </script>
+</body>
+</html>
