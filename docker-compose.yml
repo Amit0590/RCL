@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - PORT=8080
       - FACEBOOK_CLIENT_ID=your_facebook_client_id
       - FACEBOOK_CLIENT_SECRET=your_facebook_client_secret
@@ -17,9 +17,29 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION}
+      - DYNAMODB_ENDPOINT=http://dynamodb-local:8000
     volumes:
       - ./:/app
     restart: unless-stopped
+    depends_on:
+      - dynamodb-local
+    networks:
+      - app-network
+
+  dynamodb-local:
+    image: amazon/dynamodb-local:latest
+    container_name: dynamodb-local
+    ports:
+      - "8000:8000"
+    command: ["-jar", "DynamoDBLocal.jar", "-sharedDb"]
+    volumes:
+      - dynamodb_data:/home/dynamodblocal
+    networks:
+      - app-network
 
 volumes:
   dynamodb_data:
+
+networks:
+  app-network:
+    driver: bridge

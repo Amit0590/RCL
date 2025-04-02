@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essays & Analysis | Roshan Content Lab</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><a href="index.html">Roshan Content Lab</a></h1>
+                <p class="tagline">Critical Analysis • Political Theory • Cultural Commentary</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="essays.html" class="active">Essays</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="profile.html" class="profile-link" style="display: none;">Profile</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline login-btn">Login</a>
+                <a href="signup.html" class="btn btn-primary signup-btn">Sign Up</a>
+                <a href="#" class="btn btn-outline logout-btn" style="display: none;">Logout</a>
+                <span class="user-name" style="display: none;"></span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="essays-page">
+        <section class="essays-hero">
+            <div class="container">
+                <h1>Featured Essays</h1>
+                <p>In-depth analysis of contemporary political and cultural phenomena</p>
+            </div>
+        </section>
+
+        <section class="essays-grid">
+            <div class="container">
+                <div class="filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="politics">Politics</button>
+                    <button class="filter-btn" data-category="society">Society</button>
+                    <button class="filter-btn" data-category="culture">Culture</button>
+                    <button class="filter-btn" data-category="literature">Literature</button>
+                </div>
+
+                <div class="essays-list">
+                    <article class="essay-card" data-category="politics">
+                        <div class="essay-image">
+                            <img src="images/politics-essay.jpg" alt="Political Analysis">
+                        </div>
+                        <div class="essay-content">
+                            <h2>The Sociology of Modern Populism</h2>
+                            <p class="essay-meta">By Dr. James Wilson • 15 min read • Politics</p>
+                            <p class="essay-excerpt">An examination of the social and economic factors driving the rise of populist movements across the globe...</p>
+                            <a href="essays/sociology-of-populism.html" class="btn btn-outline">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="essay-card" data-category="literature">
+                        <div class="essay-image">
+                            <img src="images/literature-essay.jpg" alt="Literary Analysis">
+                        </div>
+                        <div class="essay-content">
+                            <h2>Literature as Political Resistance</h2>
+                            <p class="essay-meta">By Prof. Sarah Chen • 12 min read • Literature</p>
+                            <p class="essay-excerpt">Exploring how contemporary authors use narrative techniques to challenge political orthodoxies...</p>
+                            <a href="essays/literature-resistance.html" class="btn btn-outline">Read More</a>
+                        </div>
+                    </article>
+
+                    <article class="essay-card" data-category="society">
+                        <div class="essay-image">
+                            <img src="images/society-essay.jpg" alt="Social Analysis">
+                        </div>
+                        <div class="essay-content">
+                            <h2>Digital Democracy and Its Discontents</h2>
+                            <p class="essay-meta">By Dr. Maya Patel • 18 min read • Society</p>
+                            <p class="essay-excerpt">A critical analysis of how social media platforms are reshaping democratic discourse...</p>
+                            <a href="essays/digital-democracy.html" class="btn btn-outline">Read More</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn next">Next →</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter-signup">
+            <div class="container">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get weekly digests of our latest essays and exclusive content</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Roshan Content Lab</h2>
+                    <p>Critical Analysis • Political Theory • Cultural Commentary</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="essays.html">Essays</a></li>
+                            <li><a href="resources.html">Resources</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#">Politics</a></li>
+                            <li><a href="#">Society</a></li>
+                            <li><a href="#">Culture</a></li>
+                            <li><a href="#">Literature</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Roshan Content Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

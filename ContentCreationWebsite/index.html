@@ -3,298 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Content Creation Services | Roshan Content Lab</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Research & Critical Literature | Academic Analysis Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <h1>Roshan Content Lab</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="profile.html" class="profile-link" style="display: none;">Profile</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <a href="login.html" class="btn btn-outline login-btn">Login</a>
-                <a href="signup.html" class="btn btn-primary signup-btn">Sign Up</a>
-                <a href="#" class="btn btn-outline logout-btn" style="display: none;">Logout</a>
-                <span class="user-name" style="display: none;"></span>
-            </div>
-            <div class="hamburger">
+        <div class="nav-container container">
+            <a href="/" class="logo">RCL</a>
+            <nav class="nav-links">
+                <a href="essays.html">Essays</a>
+                <a href="#analysis">Analysis</a>
+                <a href="#theory">Theory</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="btn btn-primary">Subscribe</a>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+            <button class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-        </nav>
+            </button>
+        </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Expert Content Creation Services</h1>
-                <p>Professional writing services that elevate your brand with high-quality, tailored content solutions.</p>
-                <div class="cta-buttons">
-                    <a href="request.html" class="btn btn-primary">Request Content</a>
-                    <a href="#services" class="btn btn-secondary">Learn More</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/content-writing.svg" alt="Content Writing Illustration">
-            </div>
+            <h1>Research & Critical Literature</h1>
+            <p>Bridging academic research with social movements through critical analysis and thoughtful discourse</p>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Academic Services</h2>
-                <p>We offer comprehensive academic writing and research support services</p>
-            </div>
+            <h2>Our Focus Areas</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate-in">
                     <div class="service-icon">
-                        <i class="fas fa-book-reader"></i>
+                        <i class="fas fa-globe"></i>
                     </div>
-                    <h3>Research Papers</h3>
-                    <p>Professional assistance with academic research papers across all disciplines and citation styles.</p>
+                    <h3>Global Political Analysis</h3>
+                    <p>In-depth examination of global political movements, policy developments, and ideological shifts.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-in">
                     <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-book"></i>
                     </div>
-                    <h3>Dissertations & Theses</h3>
-                    <p>Comprehensive support for doctoral dissertations and master's theses with rigorous research methodology.</p>
+                    <h3>Academic Writing</h3>
+                    <p>Professional assistance in crafting well-researched academic papers and critical literature reviews.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-in">
                     <div class="service-icon">
-                        <i class="fas fa-journal-whills"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Journal Articles</h3>
-                    <p>Expert writing assistance for scholarly articles targeting peer-reviewed academic journals.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-edit"></i>
-                    </div>
-                    <h3>Academic Editing</h3>
-                    <p>Thorough editing and proofreading services to ensure scholarly excellence and proper formatting.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Literature Reviews</h3>
-                    <p>Comprehensive literature reviews that synthesize and analyze current research in your field.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Research Proposals</h3>
-                    <p>Well-structured research proposals that align with academic standards and funding requirements.</p>
+                    <h3>Social Movement Research</h3>
+                    <p>Comprehensive analysis of contemporary social movements and their historical contexts.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
+    <section class="process" id="process">
         <div class="container">
-            <div class="section-header">
-                <h2>How It Works</h2>
-                <p>Our streamlined process for academic writing assistance</p>
-            </div>
+            <h2>Our Process</h2>
+            <p>Our streamlined process for academic writing assistance</p>
             <div class="steps">
-                <div class="step">
+                <div class="step animate-in">
                     <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Submit Your Request</h3>
-                        <p>Fill out our detailed content request form with your requirements.</p>
-                    </div>
+                    <h3>Initial Consultation</h3>
+                    <p>Discuss your research goals and requirements</p>
                 </div>
-                <div class="step">
+                <div class="step animate-in">
                     <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Get a Quote</h3>
-                        <p>Receive a custom quote based on your content needs.</p>
-                    </div>
+                    <h3>Research & Analysis</h3>
+                    <p>Thorough research and critical analysis of sources</p>
                 </div>
-                <div class="step">
+                <div class="step animate-in">
                     <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Content Creation</h3>
-                        <p>Our expert writers create high-quality content tailored to your specifications.</p>
-                    </div>
+                    <h3>Writing & Review</h3>
+                    <p>Professional writing with continuous feedback</p>
                 </div>
-                <div class="step">
+                <div class="step animate-in">
                     <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Review & Revisions</h3>
-                        <p>Review the content and request revisions if needed.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Final Delivery</h3>
-                        <p>Receive your polished, ready-to-use content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="cta-center">
-                <a href="request.html" class="btn btn-primary">Start Your Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Academic Testimonials</h2>
-                <p>What scholars and researchers say about our academic writing services</p>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"The research paper assistance provided was invaluable. The writing demonstrated deep understanding of the subject matter and met all academic requirements perfectly."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/client1.jpg" alt="Client 1">
-                        <div class="author-info">
-                            <h4>Dr. Sarah Thompson</h4>
-                            <p>Professor of Economics, Stanford University</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Working with AcademicPro has significantly improved the quality of my dissertation. Their expertise in research methodology and academic writing is exceptional."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/client2.jpg" alt="Client 2">
-                        <div class="author-info">
-                            <h4>Michael Chen, Ph.D. Candidate</h4>
-                            <p>Department of Computer Science, MIT</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"The literature review service helped me establish a solid foundation for my research. The comprehensive analysis and academic rigor were impressive."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="images/client3.jpg" alt="Client 3">
-                        <div class="author-info">
-                            <h4>Dr. Emily Martinez</h4>
-                            <p>Research Fellow, Harvard Medical School</p>
-                        </div>
-                    </div>
+                    <h3>Final Delivery</h3>
+                    <p>Polished final document with all requirements met</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section class="featured-articles" id="analysis">
         <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Have questions? Get in touch with us</p>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@roshanwritelab.com</p>
+            <h2>Featured Analysis</h2>
+            <div class="articles-grid">
+                <article class="article-card animate-in">
+                    <div class="article-image">
+                        <img src="images/content-writing.svg" alt="Political Analysis">
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+1 (555) 123-4567</p>
+                    <div class="article-content">
+                        <h3>Contemporary Political Movements</h3>
+                        <p>Analysis of current global political trends and their implications for social change.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>123 Content Street, Writer's Block, NY 10001</p>
+                </article>
+                <article class="article-card animate-in">
+                    <div class="article-image">
+                        <img src="images/content-writing.svg" alt="Economic Analysis">
                     </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    <div class="article-content">
+                        <h3>Economic Theory & Practice</h3>
+                        <p>Critical examination of economic systems and their impact on society.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+                </article>
+                <article class="article-card animate-in">
+                    <div class="article-image">
+                        <img src="images/content-writing.svg" alt="Social Movements">
+                    </div>
+                    <div class="article-content">
+                        <h3>Social Movement Studies</h3>
+                        <p>Research on grassroots organizing and collective action.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>Roshan Content Lab</h2>
-                    <p>Premium Content Creation Services</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#how-it-works">How It Works</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="#">Research Papers</a></li>
-                            <li><a href="#">Dissertations & Theses</a></li>
-                            <li><a href="#">Journal Articles</a></li>
-                            <li><a href="#">Academic Editing</a></li>
-                            <li><a href="#">Literature Reviews</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Legal</h3>
-                        <ul>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Roshan Content Lab. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="js/main.js"></script>
+        themeToggle.addEventListener('click', () => {
+            body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
+            themeToggle.innerHTML = body.dataset.theme === 'dark' ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate-in').forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
